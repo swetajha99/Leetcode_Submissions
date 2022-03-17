@@ -11,17 +11,10 @@
 class Solution {
     public ListNode middleNode(ListNode head) {
         int len = length(head);
-        if(len%2!=0){
-            int leng = len/2;
-            while(leng-->0){
-                head = head.next;
-            }}
-        if(len%2==0){
             int leng = len/2;
             while(leng-->0){
                 head = head.next;
             }
-        }
             return head;
         
     }

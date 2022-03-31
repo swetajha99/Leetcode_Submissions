@@ -1,0 +1,16 @@
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        //let this be a count array, where the values are actually acting as the index
+        //and getting incremented 
+        int[] arr = new int[101];
+        for(int e:nums){
+            arr[e]++;
+        }
+        
+        int result =0;
+        for(int e:arr){
+            result+=(e*(e-1)/2);// n*(n-1)/2 is a basic formula to calculate the number of                                          unique pairs , where n isthe number of elements in the array
+        }
+        return result;
+    }
+}

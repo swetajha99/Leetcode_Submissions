@@ -1,0 +1,14 @@
+class Solution {
+    public List<String> cellsInRange(String s) {
+        char i = s.charAt(1), n = s.charAt(4);
+        char c1 = s.charAt(0), c2 = s.charAt(3);
+        ArrayList<String> list = new ArrayList<>();
+         for (char c = c1; c <= c2; ++c) {
+           for (char r = i; r <= n; ++r) {
+            list.add(""+ c + r );
+            }
+        }
+        
+        return list;
+    }
+}

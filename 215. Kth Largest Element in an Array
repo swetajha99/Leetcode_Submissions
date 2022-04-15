@@ -1,0 +1,34 @@
+215. Kth Largest Element in an Array
+Medium
+
+8906
+
+481
+
+Add to List
+
+Share
+Given an integer array nums and an integer k, return the kth largest element in the array.
+
+Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+
+class Solution {
+	public int findKthLargest(int[] arr, int k) {
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
+		for(int i=0;i<arr.length;i++){
+			if(k!=0){
+				pq.add(arr[i]);
+				k--;
+			}
+			else{
+				if(pq.peek()<arr[i]){
+					pq.remove();
+					pq.add(arr[i]);
+				}
+			}
+		}
+		return pq.peek();
+	}
+}
+/* time complexity: O(N+k(logN)) the log N is for the heapify function*/
